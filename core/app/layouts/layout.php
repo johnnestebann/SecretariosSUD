@@ -9,7 +9,7 @@
     <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
     <link href="plugins/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
-    <link href="plugins/dist/css/skins/skin-blue-light.min.css" rel="stylesheet" type="text/css" />
+    <link href="plugins/dist/css/skins/skin-blue.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="plugins/datatables/dataTables.bootstrap.css">
     <script src="plugins/tinymce/tinymce.min.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -28,7 +28,7 @@
 
   </head>
 
-  <body class="<?php if(isset($_SESSION["user_id"])):?>  skin-blue-light sidebar-mini <?php else:?>login-page<?php endif; ?>" >
+  <body class="<?php if(isset($_SESSION["user_id"])):?>  skin-blue sidebar-mini <?php else:?>login-page<?php endif; ?>" >
     <div class="wrapper">
       <!-- Main Header -->
       <?php if(isset($_SESSION["user_id"])):?>
@@ -36,9 +36,9 @@
         <!-- Logo -->
         <a href="./" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>L</b>A</span>
+          <span class="logo-mini"><b>S</b>S</span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg">LB<b>ADMIN</b></span>
+          <span class="logo-lg">Secretarios<b>SUD</b></span>
         </a>
 
         <!-- Header Navbar -->
@@ -86,7 +86,7 @@
           <ul class="sidebar-menu">
             <li class="header">ADMINISTRACION</li>
             <?php if(isset($_SESSION["user_id"])):?>
-              <li><a href="./"><i class='fa fa-dashboard'></i> <span>Dashboard</span></a></li>
+              <li><a href="./"><i class='fa fa-dashboard'></i> <span>Panel</span></a></li>
               <?php if(Core::$user->kind==1):?>
               <li><a href="./index.php?view=users"><i class='fa fa-user'></i> <span>Usuarios</span></a></li>
               <?php endif;?>
@@ -106,17 +106,19 @@
 
         <footer class="main-footer">
         <div class="pull-right hidden-xs">
-          <b>Version</b> 1.1
+          <b>Version</b> 1.0
         </div>
-        <strong>Copyright &copy; 2016 <a href="http://evilnapsis.com/" target="_blank">Evilnapsis</a></strong>
+        <strong>Copyright &copy; 2017 <a href="http://evilnapsis.com/" target="_blank">John Esteban</a></strong>
       </footer>
       <?php else:?>
 
 <div class="login-box">
-      <div class="login-logo">
-        <a href="./">LB<b>ADMIN</a>
-      </div><!-- /.login-logo -->
       <div class="login-box-body">
+      	<center><img alt="" src="plugins/dist/img/logo_lds.png" width="50%" /></center>
+      	<br /><br />
+      	<div class="login-logo">
+        <a href="./">Secretarios<b>SUD</a>
+      </div><!-- /.login-logo -->
         <form action="./?action=processlogin" method="post">
           <div class="form-group has-feedback">
             <input type="text" name="username" required class="form-control" placeholder="Usuario"/>
