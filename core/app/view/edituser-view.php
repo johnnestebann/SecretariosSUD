@@ -10,7 +10,7 @@ $user = UserData::getById($_GET["id"]);
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                  <a href="./?view=index"><i class="fa fa-dashboard"></i> Dashboard</a>
+                                  <a href="./?view=index"><i class="fa fa-dashboard"></i> Panel</a>
                             </li>
                             <li>
                                   <a href="./?view=users"><i class="fa fa-users"></i> Usuarios</a>
@@ -27,7 +27,7 @@ $user = UserData::getById($_GET["id"]);
                     <div class="col-lg-8">
 
                         <form role="form" method="post" action="./?action=updateuser" enctype="multipart/form-data">
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label>Imagen (480x480)</label>
                                 <input type="file" name="image">
                                 <?php if($user->image!=null):
@@ -35,7 +35,7 @@ $user = UserData::getById($_GET["id"]);
 <br>
 <img src="storage/images/<?php echo $user->image;?>" class="img-responsive img-thumbnail" style="width:180px;">
 <?php endif;?>
-                            </div>
+                            </div> -->
                             <div class="form-group">
                                 <label>Nombre</label>
                                 <input type="text" name="name" value="<?=$user->name;?>" class="form-control" placeholder="Nombre">

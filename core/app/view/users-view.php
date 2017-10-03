@@ -10,7 +10,7 @@ $data["posts"]=UserData::getAll();
                         </h1>
                         <ol class="breadcrumb">
                             <li class="">
-                                <i class="fa fa-dashboard"></i> Dashboard
+                                <a href="./?view=index"><i class="fa fa-dashboard"></i> Panel</a>
                             </li>
                             <li class="active">
                                 <i class="fa fa-users"></i> Usuarios
@@ -31,15 +31,17 @@ $data["posts"]=UserData::getAll();
                                                 <th>Nombre</th>
                                                 <th>Nombre de usuario</th>
                                                 <th>Email</th>
-                                                <th></th>
+                                                <th>Unidad</th>
+                                                <th>Acciones</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                         <?php foreach($data["posts"] as $post):?>
                                             <tr>
-                                                <td><?=$post->name;?></td>
+                                                <td><?=$post->lastname.", ".$post->name;?></td>
                                                 <td><?=$post->username;?></td>
                                                 <td><?=$post->email;?></td>
+                                                <td></td>
                                                 <td style="width:70px;">
                                                 <a href="./?view=edituser&id=<?=$post->id;?>" class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i></a>
                                                 <a href="./?action=deluser&id=<?=$post->id;?>" class="btn btn-xs btn-danger"><i class="fa fa-remove"></i></a>
