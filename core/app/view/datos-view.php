@@ -47,8 +47,9 @@ else $data["posts"]=Fecha::getAllBySecretario($_SESSION["user_id"]);
                                                 <td><?=$post->asist_melq;?></td>
                                                 <td><?=$post->bautismos;?></td>
                                                 <td style="width:70px;">
-                                                <a href="./?view=edituser&id=<?=$post->id;?>" class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i></a>
-                                                <a href="./?action=deluser&id=<?=$post->id;?>" class="btn btn-xs btn-danger"><i class="fa fa-remove"></i></a>
+                                                <a href="./?view=viewdatos&id=<?=$post->id;?>" class="btn btn-xs btn-info"><i class="fa fa-eye"></i></a>
+                                                <a href="./?view=editdatos&id=<?=$post->id;?>" class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i></a>
+                                                <a href="./?action=deldatos&id=<?=$post->id;?>" class="btn btn-xs btn-danger"><i class="fa fa-remove"></i></a>
                                                 </td>
                                             </tr>
                                         <?php endforeach;?>
