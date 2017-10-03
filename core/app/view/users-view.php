@@ -6,14 +6,14 @@ $data["posts"]=UserData::getAll();
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Usuarios
+                            Secretarios
                         </h1>
                         <ol class="breadcrumb">
                             <li class="">
                                 <a href="./?view=index"><i class="fa fa-dashboard"></i> Panel</a>
                             </li>
                             <li class="active">
-                                <i class="fa fa-users"></i> Usuarios
+                                <i class="fa fa-users"></i> Secretarios
                             </li>
                         </ol>
                     </div>

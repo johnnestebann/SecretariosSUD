@@ -65,7 +65,7 @@ class Unidad
 	public static function getById($id){
 		$sql = "select * from ".self::$tablename." where id=$id";
 		$query = Executor::doit($sql);
-		return Model::one($query[0],new UserData());
+		return Model::one($query[0],new Unidad());
 	}
 
 	public static function getByName($nombre){

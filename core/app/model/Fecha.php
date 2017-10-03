@@ -15,13 +15,14 @@ class Fecha
 		$this->orientacion = 0;
 		$this->visitas = 0;
 		$this->bautismos = 0;
+		$this->secretario = 0;
 		$this->created_at = "NOW()";
 	}
 
 	public function add()
 	{
-		$sql = "insert into ".self::$tablename." (fecha,asist_sacr,asist_melq,consejo,comite,rec_activas,rec_vencidas,orientacion,visitas,bautismos,created_at) ";
-		$sql .= "value (\"$this->fecha\",\"$this->asist_sacr\",\"$this->asist_melq\",\"$this->consejo\",\"$this->comite\",\"$this->rec_activas\",\"$this->rec_vencidas\",\"$this->orientacion\",\"$this->visitas\",\"$this->bautismos\",$this->created_at)";
+		$sql = "insert into ".self::$tablename." (fecha,secretario,asist_sacr,asist_melq,consejo,comite,rec_activas,rec_vencidas,orientacion,visitas,bautismos,created_at) ";
+		$sql .= "value (\"$this->fecha\",\"$this->secretario\",\"$this->asist_sacr\",\"$this->asist_melq\",\"$this->consejo\",\"$this->comite\",\"$this->rec_activas\",\"$this->rec_vencidas\",\"$this->orientacion\",\"$this->visitas\",\"$this->bautismos\",$this->created_at)";
 		return Executor::doit($sql);
 	}
 
@@ -92,11 +93,20 @@ class Fecha
 	}
 
 
-	public static function getAll(){
+	public static function getAll()
+	{
 		$sql = "select * from ".self::$tablename;
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new UserData());
 
+	}
+	
+	public static function getAllBySecretario($secretario)
+	{
+		$sql = "select * from ".self::$tablename." where secretario=\"$secretario\"";
+		$query = Executor::doit($sql);
+		return Model::many($query[0],new Fecha());
+		
 	}
 
 	public static function getInactives(){
