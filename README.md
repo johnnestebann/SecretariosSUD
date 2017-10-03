@@ -1,8 +1,11 @@
-# LB Admin
-Sistema de Administracion Sencillo para ser reutilizado, desarrollado con PHP, Mysql y LegoBox
+# Secretarios SUD
+Sistema de Administracion para secretarios de La Iglesia de Jesucristo de los Santos de los Ultimos Dias (no oficial), desarrollado con PHP, Mysql y LegoBox
 
-- Dashboard
-- Modulo de usuarios
+- Panel
+- Modulo de datos
+- Modulo de unidades
+- Modulo de secretarios
+- Modulo de configuracion
 
 ### Plugins Incluidos
 - Morris Charts
