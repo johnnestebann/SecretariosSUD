@@ -38,7 +38,7 @@
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>S</b>S</span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg">Secretarios<b>SUD</b></span>
+          <span class="logo-lg">Secretario<b>SUD</b></span>
         </a>
 
         <!-- Header Navbar -->
@@ -117,9 +117,10 @@
 <div class="login-box">
       <div class="login-box-body">
       	<center><img alt="" src="plugins/dist/img/logo_lds.png" width="50%" /></center>
-      	<br /><br />
+      	<br />
       	<div class="login-logo">
-        <a href="./">Secretarios<b>SUD</a>
+      	<hr style="color:red">
+        <a href="./">Secretario<b>SUD</a><hr>
       </div><!-- /.login-logo -->
         <form action="./?action=processlogin" method="post">
           <div class="form-group has-feedback">
