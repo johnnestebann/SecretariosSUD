@@ -18,6 +18,7 @@
 			$p->username = $_POST["username"];
 			$p->email = $_POST["email"];
 			$p->password = sha1(md5($_POST["password"]));
+			$p->unidad = $_POST["unidad"];
 			$p->kind = $_POST["kind_id"];
 			$imag="";
 		

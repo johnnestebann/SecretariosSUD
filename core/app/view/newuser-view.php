@@ -21,33 +21,53 @@
                 <!-- /.row -->
 
                 <div class="row">
-                    <div class="col-lg-8">
 
                         <form role="form" method="post" action="./?action=adduser" enctype="multipart/form-data">
-                            <!-- <div class="form-group">
-                                <label>Imagen (480x480)</label>
-                                <input type="file" name="image">
-                            </div> -->
+                        <div class="col-lg-5">
                             <div class="form-group">
-                                <label>Nombre</label>
+                                <label>Nombres</label>
                                 <input type="text" name="name" class="form-control" placeholder="Nombre">
                             </div>
-                            <div class="form-group">
-                                <label>Apellidos</label>
-                                <input type="text" name="lastname" class="form-control" placeholder="Apellidos">
-                            </div>
+                            
                             <div class="form-group">
                                 <label>Nombre de usuario</label>
                                 <input type="text" name="username" class="form-control" placeholder="Nombre de usuario" required>
                             </div>
+                            
                             <div class="form-group">
-                                <label>Email</label>
-                                <input type="text" name="email" class="form-control" placeholder="Email">
+                                <label>Unidad</label>
+                                <?php
+                                    $unidades = Unidad::getAll();
+                                ?>
+                                <?php if(count($unidades) > 0):?>
+                                    <select name="unidad" class="form-control" required>
+                                        <option value="">-- SELECCIONE UNIDAD --</option>
+                                    <?php foreach($unidades as $unidad):?>
+                                        <option value="<?=$unidad->id;?>"><?=$unidad->nombre;?></option>
+                                <?php endforeach;?>
+                                </select>
+                                <?php endif;?>
                             </div>
+                            
                             <div class="form-group">
                                 <label>Password</label>
                                 <input type="password" name="password" class="form-control" placeholder="Password" required>
                             </div>
+                            
+                            <button type="submit" class="btn btn-primary">Agregar</button>
+
+                    </div>
+                    <div class="col-lg-5">
+                    	<div class="form-group">
+                                <label>Apellidos</label>
+                                <input type="text" name="lastname" class="form-control" placeholder="Apellidos">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="text" name="email" class="form-control" placeholder="Email">
+                            </div>
+                            
                             <div class="form-group">
                                 <label>Tipo</label>
                                 <?php
@@ -62,11 +82,8 @@
                                 </select>
                                 <?php endif;?>
                             </div>
-                            <button type="submit" class="btn btn-primary">Agregar</button>
-
-                        </form>
-
                     </div>
+                    </form>
                     <div class="col-lg-3">
 
 
