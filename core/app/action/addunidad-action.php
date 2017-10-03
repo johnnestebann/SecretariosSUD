@@ -3,20 +3,24 @@
 * @author johnesteban
 * @brief Agregar una unidad
 **/
-		$p = new Unidad();
+		$u = new Unidad();
 		
 		$continuar = true;
 		
+		/*
+		 * Si el nombre no es nulo y no existe lo cargo
+		 */
 		if ($_POST["nombre"] != "")
 		{
-			if (Unidad::getByName($_POST["nombre"])!=null)
+			#if (Unidad::getByName($_POST["nombre"]) != null)
 			{
-				$continuar=false;
+			#	$continuar = false;
 			}
 		}
 		if ($continuar)
 		{
-			$p->nombre = $_POST["nombre"];
+			$u->nombre = $_POST["nombre"];
+			$u->add();
 		}
 		else
 		{

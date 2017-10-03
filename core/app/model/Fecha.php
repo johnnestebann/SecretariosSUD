@@ -1,17 +1,27 @@
 <?php
-class Unidad
+class Fecha
 {
-	public static $tablename = "unidad";
+	public static $tablename = "fecha";
 
-	public function Unidad()
+	public function Fecha()
 	{
-		$this->nombre = "";
+		$this->fecha = "";
+		$this->asist_sacr = 0;
+		$this->asist_melq = 0;
+		$this->consejo = "";
+		$this->comite = "";
+		$this->rec_activas = 0;
+		$this->rec_vencidas= 0;
+		$this->orientacion = 0;
+		$this->visitas = 0;
+		$this->bautismos = 0;
+		$this->created_at = "NOW()";
 	}
 
 	public function add()
 	{
-		$sql = "insert into ".self::$tablename." (nombre) ";
-		$sql .= "value (\"$this->nombre\")";
+		$sql = "insert into ".self::$tablename." (fecha,asist_sacr,asist_melq,consejo,comite,rec_activas,rec_vencidas,orientacion,visitas,bautismos,created_at) ";
+		$sql .= "value (\"$this->fecha\",\"$this->asist_sacr\",\"$this->asist_melq\",\"$this->consejo\",\"$this->comite\",\"$this->rec_activas\",\"$this->rec_vencidas\",\"$this->orientacion\",\"$this->visitas\",\"$this->bautismos\",$this->created_at)";
 		return Executor::doit($sql);
 	}
 

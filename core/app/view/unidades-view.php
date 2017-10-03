@@ -13,7 +13,7 @@ $data["posts"]=Unidad::getAll();
                                 <a href="./?view=index"><i class="fa fa-dashboard"></i> Panel</a>
                             </li>
                             <li class="active">
-                                <i class="fa fa-users"></i> Unidades
+                                <i class="fa fa-building"></i> Unidades
                             </li>
                         </ol>
                     </div>

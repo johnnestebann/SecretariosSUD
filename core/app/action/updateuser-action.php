@@ -39,5 +39,5 @@
 
 
 
-		Core::redir("./?view=edituser&id=".$_POST["id"]);
+		Core::redir("./?view=users");
 ?>

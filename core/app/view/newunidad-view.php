@@ -10,7 +10,7 @@
                                   <a href="./?view=index"><i class="fa fa-dashboard"></i> Panel</a>
                             </li>
                             <li>
-                                  <a href="./?view=users"><i class="fa fa-users"></i> Unidades</a>
+                                  <a href="./?view=unidades"><i class="fa fa-users"></i> Unidades</a>
                             </li>
                             <li class="active">
                                 <i class="fa fa-asterisk"></i> Nueva unidad
