@@ -36,7 +36,6 @@ $data["posts"]=Unidad::getAll();
                                         <?php foreach($data["posts"] as $post):?>
                                             <tr>
                                                 <td><?=$post->nombre;?></td>
-                                                <td></td>
                                                 <td style="width:70px;">
                                                 <a href="./?view=edituser&id=<?=$post->id;?>" class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i></a>
                                                 <a href="./?action=deluser&id=<?=$post->id;?>" class="btn btn-xs btn-danger"><i class="fa fa-remove"></i></a>
