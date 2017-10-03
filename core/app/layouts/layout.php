@@ -86,7 +86,7 @@
           <ul class="sidebar-menu">
             <li class="header">ADMINISTRACION</li>
             <?php if(isset($_SESSION["user_id"])):?>
-              <li><a href="./"><i class='fa fa-dashboard'></i> <span>Panel</span></a></li>
+              <!-- <li><a href="./"><i class='fa fa-dashboard'></i> <span>Panel</span></a></li> -->
               <li><a href="./index.php?view=datos"><i class='fa fa-calendar'></i> <span>Datos</span></a></li>
               <?php if(Core::$user->kind == 1):?>
               <li><a href="./index.php?view=unidades"><i class='fa fa-building'></i> <span>Unidades</span></a></li>

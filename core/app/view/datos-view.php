@@ -1,15 +1,16 @@
 <section class="content">
 <?php
 /*
- * Obtengo solo los datos del barrio del secretario
+ * Obtengo solo los datos del barrio del secretario o toda la estaca
  */
-$data["posts"]=Fecha::getAllBySecretario($_SESSION["user_id"]);
+if (Core::$user->kind == 1) $data["posts"]=Fecha::getAll();
+else $data["posts"]=Fecha::getAllBySecretario($_SESSION["user_id"]);
 ?>
                 <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Datos - Barrio <?=Unidad::getById(Core::$user->unidad)->nombre;?>
+                            Datos - <?=Unidad::getById(Core::$user->unidad)->nombre;?>
                         </h1>
                         <ol class="breadcrumb">
                             <li class="">
