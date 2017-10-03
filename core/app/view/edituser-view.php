@@ -24,9 +24,10 @@ $user = UserData::getById($_GET["id"]);
                 <!-- /.row -->
 
                 <div class="row">
-                    <div class="col-lg-8">
+                <form role="form" method="post" action="./?action=updateuser" enctype="multipart/form-data">
+                    <div class="col-lg-5">
 
-                        <form role="form" method="post" action="./?action=updateuser" enctype="multipart/form-data">
+                        
                             <!-- <div class="form-group">
                                 <label>Imagen (480x480)</label>
                                 <input type="file" name="image">
@@ -37,26 +38,58 @@ $user = UserData::getById($_GET["id"]);
 <?php endif;?>
                             </div> -->
                             <div class="form-group">
-                                <label>Nombre</label>
+                                <label>Nombres</label>
                                 <input type="text" name="name" value="<?=$user->name;?>" class="form-control" placeholder="Nombre">
                             </div>
-                            <div class="form-group">
-                                <label>Apellidos</label>
-                                <input type="text" name="lastname" value="<?=$user->lastname;?>" class="form-control" placeholder="Apellidos">
-                            </div>
+                            
                             <div class="form-group">
                                 <label>Nombre de usuario</label>
                                 <input type="text" name="username" value="<?=$user->username;?>" class="form-control" placeholder="Nombre de usuario" required>
                             </div>
+                            
                             <div class="form-group">
-                                <label>Email</label>
-                                <input type="text" name="email" value="<?=$user->email;?>" class="form-control" placeholder="Email">
+                                <label>Unidad</label>
+                                <?php
+                                    $unidades = Unidad::getAll();
+                                ?>
+                                <?php if(count($unidades) > 0):?>
+                                    <select name="unidad" class="form-control" required>
+                                        <option value="">-- SELECCIONE UNIDAD --</option>
+                                    <?php foreach($unidades as $unidad):?>
+                                        <option value="<?=$unidad->id;?>" <?php if($unidad->id == $user->unidad){echo "selected";}?>><?=$unidad->nombre;?></option>
+                                <?php endforeach;?>
+                                </select>
+                                <?php endif;?>
                             </div>
+                            
                             <div class="form-group">
                                 <label>Password</label>
                                 <input type="password" name="password" class="form-control" placeholder="Password" >
                                 <p class="text-muted">Solo se modifica la contrase&ntilde;a si el campo no esta vacio.</p>
                             </div>
+                            
+                              <div class="checkbox">
+    <label>
+      <input type="checkbox" name="status" <?php if($user->status==1){echo "checked";}?>> Activo
+    </label>
+  </div>
+                            <input type="hidden" name="id" value="<?=$user->id;?>">
+                            <button type="submit" class="btn btn-primary">Actualizar</button>
+
+                        
+
+                    </div>
+                    <div class="col-lg-5">
+                    	<div class="form-group">
+                                <label>Apellidos</label>
+                                <input type="text" name="lastname" value="<?=$user->lastname;?>" class="form-control" placeholder="Apellidos">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="text" name="email" value="<?=$user->email;?>" class="form-control" placeholder="Email">
+                            </div>
+                            
                             <div class="form-group">
                                 <label>Tipo</label>
                                 <?php
@@ -66,22 +99,14 @@ $user = UserData::getById($_GET["id"]);
                                     <select name="kind" class="form-control" required>
                                         <option value="">-- SELECCIONE TIPO --</option>
                                     <?php foreach($cats as $cat):?>
-                                        <option value="<?=$cat->id;?>" <?php if($cat->id==$user->kind){echo "selected";}?>><?=$cat->name;?></option>
+                                        <option value="<?=$cat->id;?>" <?php if($cat->id == $user->kind){echo "selected";}?>><?=$cat->name;?></option>
                                 <?php endforeach;?>
                                 </select>
                                 <?php endif;?>
                             </div>
-                              <div class="checkbox">
-    <label>
-      <input type="checkbox" name="status" <?php if($user->status==1){echo "checked";}?>> Activo
-    </label>
-  </div>
-                            <input type="hidden" name="id" value="<?=$user->id;?>">
-                            <button type="submit" class="btn btn-primary">Actualizar</button>
-
-                        </form>
-
                     </div>
+                    </form>
+                    
                     <div class="col-lg-3">
 
 

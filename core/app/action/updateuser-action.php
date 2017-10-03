@@ -10,6 +10,7 @@
 		$p->username = $_POST["username"];
 		$p->email = $_POST["email"];
 		$p->password = $_POST["password"];
+		$p->unidad = $_POST["unidad"];
 		$p->kind = $_POST["kind"];
 		$p->status = isset($_POST["status"])?1:0;
 		
@@ -30,7 +31,8 @@
 		}
 
 
-		if($_POST["password"]!=""){
+		if($_POST["password"]!="")
+		{
 		$p = UserData::getById($_POST["id"]);
 		$p->password= sha1(md5($_POST["password"]));
 		$p->update_passwd();

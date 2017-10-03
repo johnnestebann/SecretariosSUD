@@ -41,7 +41,7 @@ $data["posts"]=UserData::getAll();
                                                 <td><?=$post->lastname.", ".$post->name;?></td>
                                                 <td><?=$post->username;?></td>
                                                 <td><?=$post->email;?></td>
-                                                <td></td>
+                                                <td><?=Unidad::getById($post->unidad)->nombre;?></td>
                                                 <td style="width:70px;">
                                                 <a href="./?view=edituser&id=<?=$post->id;?>" class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i></a>
                                                 <a href="./?action=deluser&id=<?=$post->id;?>" class="btn btn-xs btn-danger"><i class="fa fa-remove"></i></a>

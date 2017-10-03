@@ -8,39 +8,44 @@ class UserData {
 		$this->lastname = "";
 		$this->email = "";
 		$this->password = "";
+		$this->unidad = 0;
 		$this->created_at = "NOW()";
 	}
 
-	public function add(){
-		$sql = "insert into user (name,lastname,email,code,password,created_at) ";
-		$sql .= "value (\"$this->name\",\"$this->lastname\",\"$this->email\",\"$this->code\",\"$this->password\",$this->created_at)";
+	public function add()
+	{
+		$sql = "insert into user (name,lastname,email,code,password,unidad,created_at) ";
+		$sql .= "value (\"$this->name\",\"$this->lastname\",\"$this->email\",\"$this->code\",\"$this->password\",\"$this->unidad\",$this->created_at)";
 		return Executor::doit($sql);
 	}
 
-	public function add2(){
-		$sql = "insert into user (image,name,lastname,email,username,password,kind,created_at) ";
-		$sql .= "value (\"$this->image\",\"$this->name\",\"$this->lastname\",\"$this->email\",\"$this->username\",\"$this->password\",$this->kind,$this->created_at)";
+	public function add2()
+	{
+		$sql = "insert into user (image,name,lastname,email,username,password,unidad,kind,created_at) ";
+		$sql .= "value (\"$this->image\",\"$this->name\",\"$this->lastname\",\"$this->email\",\"$this->username\",\"$this->password\",\"$this->unidad\",$this->kind,$this->created_at)";
 		return Executor::doit($sql);
 	}
 
-	public static function delete($id){
+	public static function delete($id)
+	{
 		$sql = "delete from ".self::$tablename." where id=$id";
 		Executor::doit($sql);
 	}
-	public function del(){
+	public function del()
+	{
 		$sql = "delete from ".self::$tablename." where id=$this->id";
 		Executor::doit($sql);
 	}
 
 // partiendo de que ya tenemos creado un objecto UserData previamente utilizamos el contexto
 	public function update(){
-		$sql = "update ".self::$tablename." set name=\"$this->name\",lastname=\"$this->lastname\",username=\"$this->username\",email=\"$this->email\",kind=\"$this->kind\",status=\"$this->status\" where id=$this->id";
+		$sql = "update ".self::$tablename." set name=\"$this->name\",unidad=\"$this->unidad\",lastname=\"$this->lastname\",username=\"$this->username\",email=\"$this->email\",kind=\"$this->kind\",status=\"$this->status\" where id=$this->id";
 		Executor::doit($sql);
 	}
 
 
 	public function update_profile(){
-		$sql = "update ".self::$tablename." set name=\"$this->name\",lastname=\"$this->lastname\",bio=\"$this->bio\",address=\"$this->address\",phone=\"$this->phone\" where id=$this->id";
+		$sql = "update ".self::$tablename." set name=\"$this->name\",unidad=\"$this->unidad\",lastname=\"$this->lastname\",bio=\"$this->bio\",address=\"$this->address\",phone=\"$this->phone\" where id=$this->id";
 		Executor::doit($sql);
 	}
 
