@@ -37,6 +37,7 @@ $data["posts"]=Unidad::getAll();
                                             <tr>
                                                 <td><?=$post->nombre;?></td>
                                                 <td style="width:70px;">
+                                                <a href="./?view=edituser&id=<?=$post->id;?>" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
                                                 <a href="./?view=edituser&id=<?=$post->id;?>" class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i></a>
                                                 <a href="./?action=deluser&id=<?=$post->id;?>" class="btn btn-xs btn-danger"><i class="fa fa-remove"></i></a>
                                                 </td>
