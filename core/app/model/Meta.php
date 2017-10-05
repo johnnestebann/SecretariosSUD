@@ -1,12 +1,11 @@
 <?php
-class Fecha
+class Meta
 {
-	public static $tablename = "fecha";
+	public static $tablename = "metas";
 
-	public function Fecha()
+	public function Meta()
 	{
 		$this->fecha = "";
-		$this->meta = "";
 		$this->asist_sacr = 0;
 		$this->asist_melq = 0;
 		$this->consejo = "";
@@ -16,14 +15,12 @@ class Fecha
 		$this->orientacion = 0;
 		$this->visitas = 0;
 		$this->bautismos = 0;
-		$this->secretario = 0;
-		$this->created_at = "NOW()";
 	}
 
 	public function add()
 	{
-		$sql = "insert into ".self::$tablename." (fecha,secretario,asist_sacr,asist_melq,consejo,comite,rec_activas,rec_vencidas,orientacion,visitas,bautismos,created_at) ";
-		$sql .= "value (\"$this->fecha\",\"$this->secretario\",\"$this->asist_sacr\",\"$this->asist_melq\",\"$this->consejo\",\"$this->comite\",\"$this->rec_activas\",\"$this->rec_vencidas\",\"$this->orientacion\",\"$this->visitas\",\"$this->bautismos\",$this->created_at)";
+		$sql = "insert into ".self::$tablename." (fecha,asist_sacr,asist_melq,consejo,comite,rec_activas,rec_vencidas,orientacion,visitas,bautismos) ";
+		$sql .= "value (\"$this->fecha\",\"$this->asist_sacr\",\"$this->asist_melq\",\"$this->consejo\",\"$this->comite\",\"$this->rec_activas\",\"$this->rec_vencidas\",\"$this->orientacion\",\"$this->visitas\",\"$this->bautismos\")";
 		return Executor::doit($sql);
 	}
 
@@ -98,7 +95,7 @@ class Fecha
 	{
 		$sql = "select * from ".self::$tablename;
 		$query = Executor::doit($sql);
-		return Model::many($query[0],new UserData());
+		return Model::many($query[0],new Meta());
 
 	}
 	
@@ -126,13 +123,6 @@ class Fecha
 		$sql = "select * from ".self::$tablename." where name like '%$q%'";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new UserData());
-	}
-	
-	public static function getAllMetas()
-	{
-		$sql = "select meta from ".self::$tablename;
-		$query = Executor::doit($sql);
-		return Model::many($query[0],new Metas());
 	}
 
 
