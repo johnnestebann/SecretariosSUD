@@ -2,14 +2,13 @@
 	<!-- Page Heading -->
 	<div class="row">
 		<div class="col-lg-12">
-			<h1 class="page-header">
-                            Nueva semana - Barrio <?=Unidad::getById(Core::$user->unidad)->nombre;?>
-                        </h1>
+			<h1 class="page-header">Nueva meta</h1>
 			<ol class="breadcrumb">
 				<li><a href="./?view=index"><i class="fa fa-dashboard"></i> Panel</a>
 				</li>
-				<li><a href="./?view=datos"><i class="fa fa-users"></i> Datos</a></li>
-				<li class="active"><i class="fa fa-asterisk"></i> Nueva semana</li>
+				<li><a href="./?view=unidades"><i class="fa fa-lightbulb-o"></i> Metas</a>
+				</li>
+				<li class="active"><i class="fa fa-asterisk"></i> Nueva meta</li>
 			</ol>
 		</div>
 	</div>

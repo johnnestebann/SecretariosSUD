@@ -26,7 +26,13 @@ if (Core::$user->kind == 1) $data["posts"]=Meta::getAll();
 
                 <div class="row">
                     <div class="col-lg-12">
-                    <a href="./?view=newdmeta" class="btn btn-default">Agregar</a><br><br>
+                    <?php
+                    if ($data["posts"] > 0)
+                    { ?>
+                    	<a href="./?view=newmeta" class="btn btn-default">Agregar</a>
+                    <?php }
+                    ?>
+                    <br><br>
                         <div class="box box-primary">
                             <div class="box-body">
                                     <table class="table datatable table-bordered table-hover table-striped">

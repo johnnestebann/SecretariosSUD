@@ -1,6 +1,7 @@
 <section class="content">
 <div class="row">
 <div class="col-md-12">
+<?php Core::redir("./?view=datos"); ?>
 <!-- <h1>Bienvenido a LB Admin</h1>
 <p>Lb Admin es un Kit gratuito para desarrollar aplicaciones web en PHP y MySQL usando el Framework Legobox.</p>
 <p>Dentro del Kit se incluyen ademas los siguientes plugins:</p>
