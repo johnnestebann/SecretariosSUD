@@ -6,7 +6,7 @@ class Meta
 
     public function Meta ()
     {
-        $this->fecha = "";
+        $this->secretario = "";
         $this->asist_sacr = 0;
         $this->asist_melq = 0;
         $this->consejo = "";
@@ -21,8 +21,8 @@ class Meta
     public function add ()
     {
         $sql = "insert into " . self::$tablename .
-                 " (fecha,asist_sacr,asist_melq,consejo,comite,rec_activas,rec_vencidas,orientacion,visitas,bautismos) ";
-        $sql .= "value (\"$this->fecha\",\"$this->asist_sacr\",\"$this->asist_melq\",\"$this->consejo\",\"$this->comite\",\"$this->rec_activas\",\"$this->rec_vencidas\",\"$this->orientacion\",\"$this->visitas\",\"$this->bautismos\")";
+                 " (secretario,asist_sacr,asist_melq,consejo,comite,rec_activas,rec_vencidas,orientacion,visitas,bautismos) ";
+        $sql .= "value (\"$this->secretario\",\"$this->asist_sacr\",\"$this->asist_melq\",\"$this->consejo\",\"$this->comite\",\"$this->rec_activas\",\"$this->rec_vencidas\",\"$this->orientacion\",\"$this->visitas\",\"$this->bautismos\")";
         return Executor::doit($sql);
     }
 
