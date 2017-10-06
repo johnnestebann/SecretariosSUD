@@ -88,10 +88,12 @@
             <?php if(isset($_SESSION["user_id"])):?>
               <!-- <li><a href="./"><i class='fa fa-dashboard'></i> <span>Panel</span></a></li> -->
               <li><a href="./index.php?view=datos"><i class='fa fa-calendar'></i> <span>Datos</span></a></li>
+              <?php if(Core::$user->kind == 2):?>
               <li><a href="./index.php?view=metas"><i class='fa fa-lightbulb-o'></i> <span>Metas</span></a></li>
-              <?php if(Core::$user->kind == 1):?>
-              <li><a href="./index.php?view=unidades"><i class='fa fa-building'></i> <span>Unidades</span></a></li>
-              <li><a href="./index.php?view=users"><i class='fa fa-users'></i> <span>Secretarios</span></a></li>
+              <?php endif;?>
+              	<?php if(Core::$user->kind == 1):?>
+              	<li><a href="./index.php?view=unidades"><i class='fa fa-building'></i> <span>Unidades</span></a></li>
+              	<li><a href="./index.php?view=users"><i class='fa fa-users'></i> <span>Secretarios</span></a></li>
               <?php endif;?>
           <?php endif;?>
 

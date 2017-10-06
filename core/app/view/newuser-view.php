@@ -3,17 +3,17 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Nuevo usuario
+                            Nuevo secretario
                         </h1>
                         <ol class="breadcrumb">
                             <li>
                                   <a href="./?view=index"><i class="fa fa-dashboard"></i> Panel</a>
                             </li>
                             <li>
-                                  <a href="./?view=users"><i class="fa fa-users"></i> Usuarios</a>
+                                  <a href="./?view=users"><i class="fa fa-users"></i> Secretarios</a>
                             </li>
                             <li class="active">
-                                <i class="fa fa-asterisk"></i> Nuevo usuario
+                                <i class="fa fa-asterisk"></i> Nuevo secretario
                             </li>
                         </ol>
                     </div>

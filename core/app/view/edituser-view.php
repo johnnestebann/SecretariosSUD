@@ -11,7 +11,7 @@ $user = UserData::getById($_GET["id"]);
 				</li>
 				<li><a href="./?view=users"><i class="fa fa-users"></i> Secretarios</a>
 				</li>
-				<li class="active"><i class="fa fa-asterisk"></i> Editar usuario</li>
+				<li class="active"><i class="fa fa-asterisk"></i> Editar secretario</li>
 			</ol>
 		</div>
 	</div>

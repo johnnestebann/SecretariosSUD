@@ -30,8 +30,8 @@ $data["posts"]=UserData::getAll();
                                             <tr>
                                                 <th>Nombre</th>
                                                 <th>Nombre de usuario</th>
-                                                <th>Email</th>
                                                 <th>Unidad</th>
+                                                <th>Cargo</th>
                                                 <th>Acciones</th>
                                             </tr>
                                         </thead>
@@ -40,8 +40,13 @@ $data["posts"]=UserData::getAll();
                                             <tr>
                                                 <td><?=$post->lastname.", ".$post->name;?></td>
                                                 <td><?=$post->username;?></td>
-                                                <td><?=$post->email;?></td>
                                                 <td><?=Unidad::getById($post->unidad)->nombre;?></td>
+                                                <td>
+                                                <?php
+                                                if ($post->kind == 1) echo "Secretario Estaca";
+                                                else echo "Secretario Barrio";
+                                                ?>
+                                                </td>
                                                 <td style="width:70px;">
                                                 <a href="./?view=edituser&id=<?=$post->id;?>" class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i></a>
                                                 <a href="./?action=deluser&id=<?=$post->id;?>" class="btn btn-xs btn-danger"><i class="fa fa-remove"></i></a>
