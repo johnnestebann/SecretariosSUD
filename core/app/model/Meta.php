@@ -2,6 +2,7 @@
 
 class Meta
 {
+
     public static $tablename = "metas";
 
     public function Meta ()
@@ -94,7 +95,7 @@ class Meta
     {
         $sql = "select * from " . self::$tablename . " where id=$id";
         $query = Executor::doit($sql);
-        return Model::one($query[0], new UserData());
+        return Model::one($query[0], new Meta());
     }
 
     public static function getByName ($nombre)

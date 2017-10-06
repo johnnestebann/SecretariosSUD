@@ -6,8 +6,8 @@
 			<ol class="breadcrumb">
 				<li><a href="./?view=index"><i class="fa fa-dashboard"></i> Panel</a>
 				</li>
-				<li><a href="./?view=unidades"><i class="fa fa-lightbulb-o"></i> Metas</a>
-				</li>
+				<li><a href="./?view=unidades"><i class="fa fa-lightbulb-o"></i>
+						Metas</a></li>
 				<li class="active"><i class="fa fa-asterisk"></i> Nueva meta</li>
 			</ol>
 		</div>
@@ -16,13 +16,9 @@
 
 	<div class="row">
 
-		<form role="form" method="post" action="./?action=adddato"
+		<form role="form" method="post" action="./?action=addmeta"
 			enctype="multipart/form-data">
 			<div class="col-lg-5">
-				<div class="form-group">
-					<label>Semana</label> <input type="week" name="fecha"
-						class="form-control" placeholder="Semana">
-				</div>
 				<div class="form-group">
 					<label>Asistencia Sacramental</label> <input type="number"
 						name="asist_sacr" class="form-control"
@@ -53,6 +49,11 @@
 					</select>
 				</div>
 
+				<div class="form-group">
+					<label>Bautismos</label> <input type="number" name="bautismos"
+						class="form-control" placeholder="Bautismos en la Semana">
+				</div>
+
 				<button type="submit" class="btn btn-primary">Agregar</button>
 
 			</div>
@@ -80,19 +81,10 @@
 						name="visitas" class="form-control"
 						placeholder="Visitas de Maestras Visitantes en la Semana">
 				</div>
-
-				<div class="form-group">
-					<label>Bautismos</label> <input type="number" name="bautismos"
-						class="form-control" placeholder="Bautismos en la Semana">
-				</div>
 			</div>
 		</form>
 		<div class="col-lg-3"></div>
 	</div>
 	<!-- /.row -->
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
+	<br> <br> <br> <br> <br>
 </section>

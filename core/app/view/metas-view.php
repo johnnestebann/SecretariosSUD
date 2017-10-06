@@ -1,12 +1,9 @@
 <section class="content">
 <?php
 /*
- * Obtengo solo los datos del barrio del secretario o toda la estaca
+ * Obtengo solo las metas para el barrio del secretario
  */
-if (Core::$user->kind == 1)
-    $data["posts"] = Meta::getAll();
-else
-    $data["posts"] = Meta::getAllBySecretario($_SESSION["user_id"]);
+$data["posts"] = Meta::getAllBySecretario($_SESSION["user_id"]);
 ?>
                 <!-- Page Heading -->
 	<div class="row">
@@ -25,8 +22,7 @@ else
 
 	<div class="row">
 		<div class="col-lg-12">
-			<a href="./?view=newmeta" class="btn btn-default">Agregar</a> <br>
-			<br>
+			<a href="./?view=newmeta" class="btn btn-default">Agregar</a> <br> <br>
 			<div class="box box-primary">
 				<div class="box-body">
 					<table
